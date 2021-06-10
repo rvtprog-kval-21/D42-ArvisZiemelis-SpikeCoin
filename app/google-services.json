@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "135648578578",
+    "project_id": "spike-coin",
+    "storage_bucket": "spike-coin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135648578578:android:f5a3f8834b1d07e8af5ccb",
+        "android_client_info": {
+          "package_name": "com.example.spikecoin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135648578578-3n51d0oki0142f36kightsa8au621qun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeXcOC9c2zRggetbfLjJ37-sqT92yCRII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135648578578-3n51d0oki0142f36kightsa8au621qun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
