@@ -31,14 +31,14 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        firebaseAuth = firebaseAuth.getInstance();
+        firebaseAuth = firebaseAuth.getInstance(); //Nodrošina datubāses savienojumu
 
 
         reset_alert = new AlertDialog.Builder(this);
         inflater = this.getLayoutInflater();
 
         createAccountBtn = findViewById(R.id.createAccountBtn);
-        createAccountBtn.setOnClickListener(new View.OnClickListener(){
+        createAccountBtn.setOnClickListener(new View.OnClickListener(){         //Tiek atvērta reģistrācijas klase
             @Override
             public void  onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Register.class));
@@ -50,7 +50,7 @@ public class login extends AppCompatActivity {
         password = findViewById(R.id.loginPassword);
         loginBtn = findViewById(R.id.loginBtn);
         forget_password_btn = findViewById(R.id.forget_password_btn);
-        forget_password_btn.setOnClickListener(new View.OnClickListener() {
+        forget_password_btn.setOnClickListener(new View.OnClickListener() {     //tiek atvērts logs priekš aizmirstas paroles
             @Override
             public void onClick(View v) {
                 View view = inflater.inflate(R.layout.reset_pass,null);
@@ -86,7 +86,7 @@ public class login extends AppCompatActivity {
             }
         });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {    //pieslēgšanās aplikācijai
             @Override
             public void onClick(View v) {
                 // nolasa / parmauda
@@ -109,7 +109,7 @@ public class login extends AppCompatActivity {
                         //pieslegsanas ir izdevusies
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         finish();
-
+                                            // Ļauj lietotājam atkārtoti pieslēgties, neprasot lietotājvārdu un paroli, ja lietotājs jau iepriekš to ir izdarījis
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

@@ -19,7 +19,6 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
-import java.util.LongSummaryStatistics;
 import java.util.Map;
 import java.util.Random;
 
@@ -30,14 +29,15 @@ public class Register extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
+    String bal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        registerFullName = findViewById(R.id.registerFullName);
-        registerEmail = findViewById(R.id.registerEmail);
+        registerFullName = findViewById(R.id.WalletID);
+        registerEmail = findViewById(R.id.Amount);
         registerPassword = findViewById(R.id.registerPassword);
         registerConfPass = findViewById(R.id.registerConfPass);
         registerUserBtn = findViewById(R.id.registerUserBtn);
@@ -63,6 +63,7 @@ public class Register extends AppCompatActivity {
                 String email = registerEmail.getText().toString();
                 String password = registerPassword.getText().toString();
                 String confPass = registerConfPass.getText().toString();
+                String bal = "0";
 
                 if(fullName.isEmpty()){
                     registerFullName.setError("Full name is required!");
@@ -98,8 +99,7 @@ public class Register extends AppCompatActivity {
                         Map<String,Object> user = new HashMap<>();
                         user.put("fullName",fullName);
                         user.put("email",email);
-                        user.put("bal",0);
-                        user.put("wallet",userID+generateString(6));
+                        user.put("bal",bal);
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
